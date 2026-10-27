@@ -1,0 +1,509 @@
+:root {
+  font-family: 'Segoe UI', sans-serif;
+  color: #243343;
+  background: #f4f6f8;
+  font-synthesis: none;
+}
+
+.database-form {
+  max-width: 620px;
+  margin-top: 24px;
+}
+.database-form fieldset {
+  border: 1px solid #dfe5eb;
+  border-radius: 6px;
+  padding: 20px;
+}
+.database-form label {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.database-form input,
+.database-form select {
+  padding: 10px;
+  font: inherit;
+  min-width: 0;
+}
+.database-form textarea {
+  padding: 10px;
+  font: inherit;
+  resize: vertical;
+  width: 100%;
+}
+.database-form fieldset + fieldset {
+  margin-top: 20px;
+}
+.contract-preview {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+  line-height: 1.7;
+  padding: 24px;
+  background: #f4f6f8;
+}
+.client-list li {
+  padding: 10px 0;
+  overflow-wrap: anywhere;
+}
+.database-form .confirmation {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+button:focus-visible {
+  outline: 3px solid #c89241;
+  outline-offset: 3px;
+}
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 244px;
+  padding: 32px 20px;
+  background: #172d40;
+  color: white;
+  flex-shrink: 0;
+}
+.brand {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #eac58d;
+}
+.brand span {
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+  color: white;
+}
+nav {
+  display: grid;
+  gap: 7px;
+}
+nav button {
+  text-align: left;
+  border: 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: transparent;
+  color: #dce6ef;
+}
+nav button:hover,
+nav button[aria-current='page'] {
+  background: #30495e;
+  color: white;
+}
+.sidebar-note {
+  margin-top: 36px;
+  font-size: 12px;
+  color: #afc2d2;
+}
+main {
+  padding: 40px;
+  flex: 1;
+  min-width: 0;
+  max-width: 1280px;
+}
+header {
+  margin-bottom: 32px;
+}
+h1 {
+  font-size: 32px;
+  margin: 8px 0;
+}
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size: 17px;
+}
+p {
+  line-height: 1.65;
+}
+header > p {
+  color: #526478;
+}
+.eyebrow {
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.card {
+  background: white;
+  padding: 32px;
+  border: 1px solid #dfe5eb;
+  border-radius: 12px;
+}
+.badge {
+  display: inline-block;
+  background: #edf3f7;
+  color: #37566f;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.summary-grid article {
+  border-top: 2px solid #c89241;
+}
+.notice {
+  padding: 16px;
+  background: #fff8e9;
+  border-radius: 6px;
+  margin-top: 28px;
+}
+.primary-button {
+  background: #23465f;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin-top: 16px;
+}
+.contract-card > h2 {
+  margin-top: 0;
+}
+.save-contract-clients {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #dfe5eb;
+  border-radius: 8px;
+}
+.save-contract-clients fieldset {
+  border: 0;
+  padding: 0;
+  margin: 16px 0;
+}
+.save-contract-clients label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+}
+.contract-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 24px 0 12px;
+  list-style: none;
+}
+.contract-steps button {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #aebdca;
+  border-radius: 6px;
+  background: white;
+  color: #23465f;
+  text-align: left;
+}
+.contract-steps button[aria-current='step'] {
+  background: #23465f;
+  border-color: #23465f;
+  color: white;
+  font-weight: 600;
+}
+.contract-steps button:hover:not(:disabled):not([aria-current='step']) {
+  background: #eaf0f5;
+}
+.contract-steps button:disabled {
+  cursor: default;
+}
+.step-navigation-hint {
+  color: #526478;
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .contract-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.contract-form {
+  max-width: none;
+}
+.contract-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+}
+.contract-form .step-title {
+  margin: 0 0 24px;
+  font-size: 20px;
+}
+.contract-form label {
+  margin: 0 0 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.contract-form input,
+.contract-form select,
+.contract-form textarea {
+  width: 100%;
+  border: 1px solid #aebdca;
+  border-radius: 6px;
+  background: white;
+  color: #243343;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.contract-form input:focus-visible,
+.contract-form select:focus-visible,
+.contract-form textarea:focus-visible {
+  outline: 3px solid #c89241;
+  outline-offset: 2px;
+}
+.contract-form .field-hint {
+  margin: -8px 0 24px;
+  color: #526478;
+  font-size: 14px;
+}
+.example-panel {
+  padding: 20px;
+  background: #f4f7fa;
+  border-radius: 8px;
+  border: 1px solid #dfe5eb;
+}
+.example-panel p {
+  margin: 0 0 16px;
+}
+.secondary-button {
+  padding: 12px 18px;
+  border: 1px solid #526f85;
+  border-radius: 6px;
+  color: #23465f;
+  background: white;
+  font-weight: 600;
+}
+.secondary-button:hover:not(:disabled) {
+  background: #eaf0f5;
+}
+.contract-card .primary-button:hover:not(:disabled) {
+  background: #172d40;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #dfe5eb;
+}
+.form-actions .primary-button {
+  margin: 0;
+}
+.contract-form details {
+  margin-top: 20px;
+}
+.contract-form summary {
+  cursor: pointer;
+  margin-bottom: 16px;
+  color: #23465f;
+}
+.contract-form legend {
+  padding: 0 8px;
+  font-weight: 600;
+}
+.contract-party,
+.property-attachments {
+  padding: 20px;
+  border: 1px solid #dfe5eb;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.contract-party h4,
+.property-attachments h4 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+.representation-fields {
+  margin-top: 24px;
+}
+.party-dialog {
+  width: min(900px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 28px;
+  border: 1px solid #aebdca;
+  border-radius: 12px;
+  color: #243343;
+}
+.party-dialog::backdrop {
+  background: rgb(23 45 64 / 65%);
+}
+.party-dialog h2 {
+  margin-top: 0;
+}
+.spouse-fields {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #dfe5eb;
+}
+.spouse-fields > label {
+  margin-bottom: 20px;
+}
+.spouse-fields .client-fields {
+  margin-bottom: 24px;
+}
+.property-attachments ul {
+  padding: 0;
+  list-style: none;
+}
+.property-attachments li {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+.attachment-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+.clients-card > h2 {
+  margin-top: 0;
+}
+.clients-form {
+  max-width: none;
+}
+.clients-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+}
+.clients-form h3 {
+  margin: 0 0 24px;
+  font-size: 20px;
+}
+.client-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.client-fields .full-width {
+  grid-column: 1 / -1;
+}
+.clients-form label {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.5;
+  align-content: start;
+}
+.clients-form input,
+.clients-form select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #aebdca;
+  border-radius: 6px;
+  background: white;
+  color: #243343;
+  font-weight: 400;
+}
+.clients-form input:focus-visible,
+.clients-form select:focus-visible {
+  outline: 3px solid #c89241;
+  outline-offset: 2px;
+}
+.client-search {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+.client-search label {
+  flex: 1;
+}
+.clients-card .client-list {
+  list-style: none;
+  padding: 0;
+}
+.client-summary {
+  padding: 16px;
+  border: 1px solid #dfe5eb;
+  border-radius: 6px;
+}
+.client-summary summary {
+  cursor: pointer;
+}
+.client-summary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.client-summary dt {
+  font-weight: 600;
+}
+.client-summary dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+}
+@media (max-width: 900px) {
+  .client-fields,
+  .client-summary dl {
+    grid-template-columns: 1fr;
+  }
+  .client-search {
+    flex-wrap: wrap;
+  }
+  .sidebar {
+    width: 200px;
+  }
+  main {
+    padding: 24px;
+  }
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+  .brand {
+    margin-bottom: 20px;
+  }
+  nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  main {
+    padding: 20px;
+  }
+  .card,
+  .contract-form fieldset,
+  .clients-form fieldset {
+    padding: 16px;
+  }
+}
